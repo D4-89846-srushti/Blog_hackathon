@@ -18,8 +18,8 @@ const navigate = useNavigate()
 
 
 const onLogin = async () => {
-    console.log(email)
-    console.log(loginInfo)
+    // console.log(email)
+    // console.log(loginInfo)
     if (loginInfo.email.length == 0) {
         toast.warn('Please enter the email')
     } else if (loginInfo.password.length == 0) {
@@ -34,9 +34,11 @@ const onLogin = async () => {
         if (result.status == 'success') {
             toast.success('welcome to my app')
 
-            const { token } = result.data
+            console.log(result.data)
+            const { token  , full_name} = result.data
+            // console.log(token)
             sessionStorage.setItem('token', token)
-            // sessionStorage.setItem('name', full_name)
+            sessionStorage.setItem('name', full_name)
 
             navigate('/home')
         }

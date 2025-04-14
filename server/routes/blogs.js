@@ -29,14 +29,15 @@ router.put('/editblog/:id',(req,res)=>{
 
 router.get('/myblogs', (req,res)=>{
   const user_id = req.headers.user_id
-  const sql = `SELECT * FROM blogs WHERE user_id = ?`
+  const sql = `SELECT blogID, blogs.title  as b_title, categories.title as c_title , created_time FROM blogs , categories WHERE  blogs.category_id = categories.category_id AND  user_id = ?`
   pool.query(sql,[user_id],(error,data)=>{
     res.send(result.createResult(error,data))
   })
 })
 
 router.get('/allblogs',(req,res)=>{
-const sql = `SELECT * FROM blogs`
+// const sql = `SELECT * FROM blogs`
+const sql = `SELECT blogID, blogs.title  as b_title, categories.title as c_title , created_time FROM blogs , categories WHERE  blogs.category_id = categories.category_id `
 pool.query(sql,(error,data)=>{
   res.send(result.createResult(error,data))
 })

@@ -10,7 +10,8 @@ export async function userRegister(
 ) {
     try {
         // create the API url
-        const url = `${config.serverUrl}/user/login`
+        // console.log('come in')
+        const url = `${config.serverUrl}/user/register`
 
         // create the request body
         const body = {
@@ -25,6 +26,7 @@ export async function userRegister(
         
 
         // return the response body to the caller
+        console.log(response.data)
         return response.data
 
 
@@ -38,13 +40,13 @@ export async function userRegister(
 export async function loginUser(email,password) {
     try {
         
-        const url=`${config.serverUrl}/user/register`
+        const url=`${config.serverUrl}/user/login`
 
         const body={email,password}
 
         // make the api call
         const response=await axios.post(url,body)
-        console.log(response)
+        // console.log(response.data)
         return response.data
         
     } catch (ex) {

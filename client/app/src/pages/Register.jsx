@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { userRegister } from '../services/user'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 
 
@@ -18,10 +19,12 @@ function Register() {
 const navigate = useNavigate()
 
 const onRegister = async () => {
+    console.log('hii')
     if (userInfo.full_name.length == 0) {
         toast.warn('Please Enter Name')
     } else {
-
+        
+        console.log('in')
         const { full_name, email, password, phone_no } = userInfo
         const result = await userRegister(
             full_name,

@@ -5,7 +5,14 @@ import Register from "./pages/Register";
 import Createblogs from "./pages/Createblogs";
 import EditBlog from "./pages/EditBlog";
 import Home from "./componenets/Home";
+import AllBlogs from './pages/AllBlogs'
+// import AddCategory from './pages/AddCategory'
+import AddCategory from "./pages/AddCategory copy";
 import { ToastContainer} from 'react-toastify'
+import Signout from "./pages/Signout";
+import MyBlogs from "./pages/MyBlogs";
+import ShowCategories from "./pages/ShowCategories";
+import DisplayCategory from "./pages/DisplayCategory";
 
 
 
@@ -14,15 +21,23 @@ function App() {
     <div className="container">
       {/* <h1 className="container page-header">Welcome home</h1> */}
       <Routes>
-        <Route path="/" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
-        {/* <Route path="/createblogs" element={<Createblogs/>}/>
-        <Route path="/editblogs" element={<EditBlog/>}/> */}
-        <Route path="/home" element={<Home/>}/>
-        
-        
+        <Route path="/" element={<Login></Login>}></Route>
+        <Route path="register" element={<Register></Register>}></Route>
+        <Route path="/home" element={<Home></Home>}>
+          <Route path="allblogs" element={<AllBlogs></AllBlogs>}></Route>
+          <Route path="newblog" element={<Createblogs></Createblogs>}></Route>
+          <Route path="myblogs" element={<MyBlogs></MyBlogs>}></Route>
+          <Route path="signout" element={<Signout></Signout>}></Route>
+          <Route path="showcategory" element={<DisplayCategory></DisplayCategory>}></Route>
+
+          <Route
+            path="addcategory"
+            element={<AddCategory></AddCategory>}
+          ></Route>
+        </Route>
       </Routes>
-      <ToastContainer/>
+
+      <ToastContainer />
       
     </div>
   );

@@ -1,10 +1,39 @@
+body{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
+.main{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+
+.left-div{
+  position: absolute;
+  left: 60px;
+  top: 60px;
+  font-size: 20px;
+  background-color: bisque;
+  color: aqua;
+}
+
+li{
+  margin: 8px;
+}
+
+.right-div{
+  text-align: center;
+  width: 80%;
+}
 
 .page-header{
   margin: 20px;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 40px;
 }
+
 
 .btn{
   border: 2px solid black;
@@ -15,6 +44,15 @@
   width: 100px;
   
 
+}
+
+.mytable{
+  width: 100%;
+}
+
+.mybtn{
+  margin: 20px;
+  border-radius: 2px;
 }
 #login{
   display: flex;
