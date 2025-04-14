@@ -18,8 +18,9 @@ router.get('/allcategories',(req,res)=>{
   })
 })
 
-router.delete('/deletecategory',(req,res)=>{
-  const {category_id} = req.body
+router.delete('/deletecategory/:id',(req,res)=>{
+  // const {category_id} = req.body
+  const category_id = req.params.id
   const sql = `DELETE FROM categories WHERE category_id = ?`
   pool.query(sql,[category_id],(error,data)=>{
     res.send(result.createResult(error,data))

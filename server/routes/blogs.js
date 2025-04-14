@@ -6,19 +6,21 @@ const router = express.Router()
 
 router.post('/createblog',(req, res)=>{
   const user_id = req.headers.user_id
-  const { title , category_id , content} = req.body
-  const sql = `INSERT INTO blogs(title , content , user_id , category_id) VALUES (?,?,?,?)`
-  pool.query(sql ,[title ,  content , user_id ,category_id], (error,data)=>{
+  // console.log(user_id)
+  const { title , category_id , contents} = req.body
+  const sql = `INSERT INTO blogs(title , contents , user_id , category_id) VALUES (?,?,?,?)`
+  pool.query(sql ,[title ,  contents , user_id ,category_id], (error,data)=>{
     res.send(result.createResult(error,data))
   })
 
 })
 
-router.put('/editblog',(req,res)=>{
-  const { title , category_id , content} = req.body
+router.put('/editblog/:id',(req,res)=>{
+  const { title , category_id , contents} = req.body
   const user_id = req.headers.user_id
-  const sql = `UPDATE  blogs SET title = ? , content = ? , category_id = ?  WHERE id = ?`
-  pool.query(sql,[title ,  content, category_id , user_id],(error,data)=>{
+  const blogID = req.params.id
+  const sql = `UPDATE  blogs SET title = ? , contents = ? , category_id = ?  WHERE blogID = ? AND user_id = ?`
+  pool.query(sql,[title ,  contents, category_id , blogID , user_id] ,(error,data)=>{
     res.send(result.createResult(error,data))
   })
 
@@ -40,8 +42,9 @@ pool.query(sql,(error,data)=>{
 })
 })
 
-router.delete('/deleteblog',(req,res)=>{
-  const blogID = req.body
+router.delete('/deleteblog/:id',(req,res)=>{
+  // const blogID = req.body
+  const blogID = req.params.id
   const sql = `DELETE FROM blogs WHERE blogID = ?`
   pool.query(sql,[blogID],(error, data)=>{
     res.send(result.createResult(error,data))
