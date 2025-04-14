@@ -3,10 +3,10 @@ const mysql2 = require('mysql2')
 
  const pool = mysql2.createPool({
 
-user: 'D4_89846_Srushti',
+user: 'root',
 host : 'localhost',
-password:'manager',
-database:'hackathon_blog'
+password:'vjeet',
+database:'blogs_db'
 })
 
 

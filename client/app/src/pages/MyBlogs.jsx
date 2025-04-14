@@ -1,35 +1,33 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import { getAllBlogs } from "../services/blogs";
+import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
+import { getMyBlogs } from '../services/blogs';
 
-function AllBlogs() {
-  const [blogs, setBlogs] = useState([]);
+function MyBlogs() {
 
-  const getBlogs = async () => {
-    const result = await getAllBlogs();
+  const [blogs , setBlogs] = useState([])
 
-    if (result.status == "success") {
-      setBlogs(result.data);
-    } else {
-      toast.error(result.error);
+  const getBlogs = async () =>{
+    const result = await getMyBlogs();
+
+    if(result.status == 'success'){
+      setBlogs(result.data)
     }
-  };
-
-  const onDeleteBlog = async (blogID)=>{
-
+    else{
+      toast.error(result.error)
+    }
   }
-  useEffect(() => {
-    getBlogs(), [];
-  });
+
+  useEffect(()=>{
+    getBlogs(),[]
+  })
 
   return (
     <div className=" container mytable">
-      <h1 className="page-heder">your blogs are here..</h1>
+      <h1 className="page-heder">your tasks are here..</h1>
       <hr />
       <br />
       {blogs.length == 0 && (
-        <h4>there are no blogs at the moment , please add one.</h4>
+        <h4>there are no task at the moment , please add one.</h4>
       )}
       {blogs.length > 0 && (
         <table className="table w-100 table-stripped">
@@ -55,7 +53,7 @@ function AllBlogs() {
                   <td>
                     <button
                       onClick={() => {
-                        onDeleteBlog(blog.id);
+                        onDeleteTask(blog.id);
                       }}
                       className="btn btn-danger"
                     >
@@ -69,7 +67,7 @@ function AllBlogs() {
         </table>
       )}
     </div>
-  );
+  )
 }
 
-export default AllBlogs;
+export default MyBlogs
