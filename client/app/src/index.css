@@ -1,5 +1,36 @@
+
+
 .page-header{
-  text-align: center;
   margin: 20px;
-  /* background-color: red; */
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn{
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  box-shadow: 5px 5px 5px gray;
+  width: 100px;
+  
+
+}
+#login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.form-control{
+border: solid 2px black;
+border-radius: 10px;
+box-shadow: 5px 5px 5px gray;
 }
