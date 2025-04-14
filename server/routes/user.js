@@ -29,7 +29,7 @@ router.post('/login', (req, res) => {
     if (data) {
       if (data.length != 0) {
         const payload = {
-          userId: data[0].id,
+          user_id: data[0].user_id,
         }
         const token = jwt.sign(payload, config.secret)
         const body = {
