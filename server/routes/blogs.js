@@ -44,8 +44,8 @@ pool.query(sql,(error,data)=>{
 })
 
 router.delete('/deleteblog/:id',(req,res)=>{
-  // const blogID = req.body
   const blogID = req.params.id
+  // console.log(blogID)
   const sql = `DELETE FROM blogs WHERE blogID = ?`
   pool.query(sql,[blogID],(error, data)=>{
     res.send(result.createResult(error,data))

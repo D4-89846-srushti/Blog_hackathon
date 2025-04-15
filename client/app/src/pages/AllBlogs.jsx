@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { getAllBlogs } from "../services/blogs";
+import { deleteBlogs } from "../services/blogs";
 
 function AllBlogs() {
   const [blogs, setBlogs] = useState([]);
@@ -11,13 +12,21 @@ function AllBlogs() {
 
     if (result.status == "success") {
       setBlogs(result.data);
+      // console.log(result.data)
     } else {
       toast.error(result.error);
     }
   };
 
   const onDeleteBlog = async (blogID)=>{
+     const result = await deleteBlogs(blogID)
 
+     if(result.status == 'success'){
+      toast.success('Blog deleted successfully')
+     }else{
+      toast.error('Failed to delete blog.')
+     }
+     
   }
   useEffect(() => {
     getBlogs(), [];
@@ -25,7 +34,7 @@ function AllBlogs() {
 
   return (
     <div className=" container mytable">
-      <h1 className="page-heder">your blogs are here..</h1>
+      <h1 className="page-heder">All blogs are here..</h1>
       <hr />
       <br />
       {blogs.length == 0 && (
@@ -51,11 +60,10 @@ function AllBlogs() {
                   <td>{blog.b_title}</td>
                   <td>{blog.c_title}</td>
                   <td>{blog.created_time}</td>
-                  {/* <td>{blog.}</td> */}
                   <td>
                     <button
                       onClick={() => {
-                        onDeleteBlog(blog.id);
+                        onDeleteBlog(blog.blogID);
                       }}
                       className="btn btn-danger"
                     >

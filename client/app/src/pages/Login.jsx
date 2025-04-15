@@ -57,7 +57,7 @@ const onLogin = async () => {
 
                     <div className="col"></div>
                     <div className="col">
-                        <h1 className='page-header'>Login</h1>
+                        <h1 className='page-head mt-9'>Login</h1>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email</label>
                             <input onChange={(e) => {

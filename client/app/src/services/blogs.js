@@ -59,3 +59,21 @@ export async function getAllBlogs() {
   }
 
 }
+
+export async function deleteBlogs(blogID) {
+
+  console.log(blogID)
+  const url = `${config.serverUrl}/blogs/deleteblog/${blogID}`
+
+  const token = sessionStorage.getItem('token')
+     const full_name = sessionStorage.getItem('full_name')
+  
+  const response = await axios.delete(url,{
+    headers:{
+      token,
+      full_name
+    }
+  })
+
+  return response.data
+}
