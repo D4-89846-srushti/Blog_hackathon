@@ -4,7 +4,7 @@ const result = require('../utils/result')
 const config = require('../utils/config')
 
 function authorization(req, res, next) {
-  if (req.url == '/user/register' || req.url == '/user/login') next()
+  if (req.url == '/user/register' || req.url == '/user/login'||req.url=='/category') next()
   else {
     const token = req.headers.token
     if (token) {

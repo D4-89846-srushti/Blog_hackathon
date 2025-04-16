@@ -10,7 +10,7 @@ export async function userRegister(
 ) {
     try {
         // create the API url
-        const url = `${config.serverUrl}/user/login`
+        const url = `${config.serverUrl}/user/register`
 
         // create the request body
         const body = {
@@ -38,7 +38,7 @@ export async function userRegister(
 export async function loginUser(email,password) {
     try {
         
-        const url=`${config.serverUrl}/user/register`
+        const url=`${config.serverUrl}/user/login`
 
         const body={email,password}
 
