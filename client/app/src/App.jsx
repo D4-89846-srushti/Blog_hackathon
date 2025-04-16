@@ -11,7 +11,6 @@ import AddCategory from "./pages/AddCategory copy";
 import { ToastContainer} from 'react-toastify'
 import Signout from "./pages/Signout";
 import MyBlogs from "./pages/MyBlogs";
-import ShowCategories from "./pages/ShowCategories";
 import DisplayCategory from "./pages/DisplayCategory";
 
 
@@ -19,7 +18,6 @@ import DisplayCategory from "./pages/DisplayCategory";
 function App() {
   return (
     <div className="container">
-      {/* <h1 className="container page-header">Welcome home</h1> */}
       <Routes>
         <Route path="/" element={<Login></Login>}></Route>
         <Route path="register" element={<Register></Register>}></Route>
@@ -29,11 +27,7 @@ function App() {
           <Route path="myblogs" element={<MyBlogs></MyBlogs>}></Route>
           <Route path="signout" element={<Signout></Signout>}></Route>
           <Route path="showcategory" element={<DisplayCategory></DisplayCategory>}></Route>
-
-          <Route
-            path="addcategory"
-            element={<AddCategory></AddCategory>}
-          ></Route>
+          <Route path="addcategory" element={<AddCategory></AddCategory>}></Route>
         </Route>
       </Routes>
 

@@ -23,11 +23,11 @@ function MyBlogs() {
 
   return (
     <div className=" container mytable">
-      <h1 className="page-heder">your tasks are here..</h1>
+      <h1 className="page-heder">your blogs are here..</h1>
       <hr />
       <br />
       {blogs.length == 0 && (
-        <h4>there are no task at the moment , please add one.</h4>
+        <h4>there are no blogs at the moment , please add one.</h4>
       )}
       {blogs.length > 0 && (
         <table className="table w-100 table-stripped">

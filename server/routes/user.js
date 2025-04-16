@@ -39,7 +39,7 @@ router.post('/login', (req, res) => {
           token: token,
           full_name: data[0].full_name
         }
-        console.log(body)
+        // console.log(body)
         res.send(result.createSuccessResult(body))
       } else res.send(result.createErrorResult('Invalid email or password'))
     } else res.send(result.createErrorResult(error))

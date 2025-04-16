@@ -6,7 +6,7 @@ function Home() {
   return (
     <div>
       <div className="container">
-        <h1 className="page-header">Welcome to Blogs</h1>
+        <h1 className="page-head">Welcome to Blogs</h1>
         <div className="main">
           <div className="left-div">
             <Navbar></Navbar>

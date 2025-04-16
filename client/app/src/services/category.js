@@ -54,8 +54,9 @@ export async function Category(title, description) {
 
   export async function deleteCategory(id) {
     try {
-      // create url
-      const url = `${config.serverUrl}/category/deletecategory/:id`
+    
+      // console.log(id)
+      const url = `${config.serverUrl}/category/deletecategory/${id}`
   
       // get the token
       const token = sessionStorage.getItem('token')
