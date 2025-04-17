@@ -31,7 +31,7 @@ function AddCategory() {
         toast.success("Successfully added a task");
 
         // redirect to the home screen
-        navigate("/showcategory");
+        navigate("/home/showcategory");
       } else {
         toast.error(result["error"]);
       }

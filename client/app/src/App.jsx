@@ -6,7 +6,6 @@ import Createblogs from "./pages/Createblogs";
 import EditBlog from "./pages/EditBlog";
 import Home from "./componenets/Home";
 import AllBlogs from './pages/AllBlogs'
-// import AddCategory from './pages/AddCategory'
 import AddCategory from "./pages/AddCategory copy";
 import { ToastContainer} from 'react-toastify'
 import Signout from "./pages/Signout";
@@ -25,6 +24,7 @@ function App() {
           <Route path="allblogs" element={<AllBlogs></AllBlogs>}></Route>
           <Route path="newblog" element={<Createblogs></Createblogs>}></Route>
           <Route path="myblogs" element={<MyBlogs></MyBlogs>}></Route>
+          <Route path="editblog" element={<EditBlog></EditBlog>}></Route>
           <Route path="signout" element={<Signout></Signout>}></Route>
           <Route path="showcategory" element={<DisplayCategory></DisplayCategory>}></Route>
           <Route path="addcategory" element={<AddCategory></AddCategory>}></Route>

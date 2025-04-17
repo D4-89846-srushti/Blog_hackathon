@@ -16,6 +16,7 @@ router.post('/createblog',(req, res)=>{
 })
 
 router.put('/editblog/:id',(req,res)=>{
+  // console.log("hello")
   const { title , category_id , contents} = req.body
   const user_id = req.headers.user_id
   const blogID = req.params.id

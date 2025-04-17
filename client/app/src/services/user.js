@@ -26,7 +26,7 @@ export async function userRegister(
         
 
         // return the response body to the caller
-        console.log(response.data)
+        // console.log(response.data)
         return response.data
 
 
