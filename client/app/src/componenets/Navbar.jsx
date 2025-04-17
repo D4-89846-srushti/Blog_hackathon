@@ -19,10 +19,10 @@ function Navbar() {
             <Link to="/home/allblogs">Find Blogs</Link>
           </li>
           <li className="nav-item">
-            <Link to="/home/addcategory">add category</Link>
+            <Link to="/home/addcategory">Add category</Link>
           </li>
           <li className="nav-item">
-            <Link to="/home/showcategory">show category</Link>
+            <Link to="/home/showcategory">Show category</Link>
           </li>
           <li className="nav-item">
             <Link to="/home/signout">SignOut</Link>

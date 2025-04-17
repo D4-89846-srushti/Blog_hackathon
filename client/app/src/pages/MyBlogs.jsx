@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import { getMyBlogs } from '../services/blogs';
+import { deleteBlogs } from '../services/blogs';
+import EditBlog from './EditBlog';
+import { editBlog } from '../services/blogs';
+// import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function MyBlogs() {
 
@@ -15,6 +20,34 @@ function MyBlogs() {
     else{
       toast.error(result.error)
     }
+  }
+
+  const onDeleteBlog = async (blogID)=>{
+       const result = await deleteBlogs(blogID)
+  
+       if(result.status == 'success'){
+        toast.success('Blog deleted successfully')
+       }else{
+        toast.error('Failed to delete blog.')
+       }
+       
+    }
+
+  const navigate = useNavigate()
+  
+  const onEditBlog = async(blogID)=>{
+    // EditBlog()
+    // navigate('/home/editblog')
+    navigate('/home/editblog', { state: { blogID } });
+
+    // console.log('onedit called')
+    // const result = await editBlog(blogID)
+    // if(result.status == 'success'){
+    //   toast.success('Blog updated successfully')
+    //  }else{
+    //   toast.error('Failed to update blog.')
+    //  }
+
   }
 
   useEffect(()=>{
@@ -51,14 +84,23 @@ function MyBlogs() {
                   <td>{blog.created_time}</td>
                   {/* <td>{blog.}</td> */}
                   <td>
+                  <button
+                      onClick={() => {
+                        onEditBlog(blog.blogID);
+                      }}
+                      className="btn btn-success mybtn"
+                    >
+                      Edit
+                    </button>
                     <button
                       onClick={() => {
-                        onDeleteTask(blog.id);
+                        onDeleteBlog(blog.blogID);
                       }}
-                      className="btn btn-danger"
+                      className="btn btn-danger mybtn"
                     >
                       Delete
                     </button>
+                    
                   </td>
                 </tr>
               );

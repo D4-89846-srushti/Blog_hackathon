@@ -10,6 +10,7 @@ function Signout() {
 
   function onSignout(){
     sessionStorage.removeItem('token')
+    sessionStorage.removeItem('name')
     navigate('/')
   }
 

@@ -27,20 +27,20 @@ const onLogin = async () => {
     } else {
         // const{email}=email
         // const{password}=password
-        console.log("called login")
+        // console.log("called login")
         const {email,password}=loginInfo
         const result = await loginUser(email, password)
-        console.log(result)
+        // console.log(result)
         if (result.status == 'success') {
             toast.success('welcome to my app')
 
-            console.log(result.data)
+            // console.log(result.data)
             const { token  , full_name} = result.data
             // console.log(token)
             sessionStorage.setItem('token', token)
             sessionStorage.setItem('name', full_name)
 
-            navigate('/home')
+            navigate('/home/allblogs')
         }
         else {
             toast.error(result.error)

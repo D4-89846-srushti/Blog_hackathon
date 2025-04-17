@@ -33,7 +33,7 @@ const onRegister = async () => {
             phone_no
           
         )
-        // console.log(result)
+        console.log(result)
 
         if (result['status'] == 'success') {
             toast.success('Successfully registered new user')
