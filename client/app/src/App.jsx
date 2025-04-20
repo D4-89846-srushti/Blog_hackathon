@@ -5,7 +5,7 @@ import Register from "./pages/Register";
 import Createblogs from "./pages/Createblogs";
 import EditBlog from "./pages/EditBlog";
 import Home from "./componenets/Home";
-import { ToastContainer } from 'react-toastify'
+
 import AddCategory from "./pages/AddCategory";
 import DisplayCategory from "./pages/DisplayCategory";
 
@@ -29,7 +29,7 @@ function App() {
 
 
       </Routes>
-      <ToastContainer />
+ 
 
     </div>
   );
